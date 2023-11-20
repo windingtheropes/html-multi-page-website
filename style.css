@@ -65,3 +65,10 @@ header nav a {
     font-weight:600;
     font-size: 14pt;
 }
+
+section h2 {
+    font-size: 32px;
+}
+section {
+    padding:5em;
+}
