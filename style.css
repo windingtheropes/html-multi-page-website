@@ -42,7 +42,10 @@ footer {
     margin-top:auto;
     display: flex;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
+    margin-left: 2.5em;
+    margin-right:2.5em;
+    margin-bottom:1.5em;
 }
 a {
     text-decoration: none;
@@ -71,4 +74,37 @@ section h2 {
 }
 section {
     padding:5em;
+}
+
+.photodesc {
+    display:flex;
+}
+
+.photodesc img {
+    height: 16em;
+    width: 16em;
+    /* margin-left: 8em; */
+}
+
+.photodesc .left,.photo {
+    display:inline-block;
+    /* min-height:100vh; */
+}
+.photodesc .photo {
+    align-items:baseline;
+}
+.photodesc .left {
+    display:flex;
+    flex-direction:column;
+}
+
+.photodesc .left .bottom {
+    margin-top:auto;
+}
+
+.contact-button {
+    background-color:white;
+    color: rgb(55,90,235);
+    padding:0.5em;
+    font-weight:600;
 }
