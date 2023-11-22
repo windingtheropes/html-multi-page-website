@@ -104,16 +104,16 @@ section {
     margin-top:auto;
 }
 
-.left ul li strong {
+.highlights ul li strong {
     padding: 0.25em;
     background-color:rgb(65,120,255);
 }
-.left ul {
+.highlights ul {
     padding:0;
     margin:0;
     display: flex;
 }
-.left ul li {
+.highlights ul li {
     list-style-type: none;
     margin-right:1em;
 }
@@ -123,4 +123,26 @@ section {
     color: rgb(55,90,235);
     padding:0.5em;
     font-weight:600;
+}
+
+.portfolio .portfolio-item {
+    display:flex;
+    justify-content: space-between;
+}
+
+portfolio portfolio-item .photo {
+    height:8em;
+    width:8em;
+}
+
+portfolio portfolio-item portfolio-head {
+    display:flex;
+    align-items: center;
+}
+
+portfolio portfolio-item portfolio-head img {
+    margin-left: 1em;
+    height:1em;
+    width:1em;
+    cursor:pointer;
 }
