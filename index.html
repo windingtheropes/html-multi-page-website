@@ -3,7 +3,20 @@
     <head>
         <title>Jack Anderson</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="preload" href="preload.js">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+            function randint(max, min) {
+                return Math.floor(Math.random() * (max - min) ) + min;
+            }
+            $(document).ready(() => {
+                const jack_imgs = ['IMG_1572.jpg', 'IMG_2247.jpg', 'IMG_9390.jpg', 'IMG_1134.jpg', 'IMG_0953.jpg']
+                const jack_img = jack_imgs[randint(0,jack_imgs.length)]
+                $("#jack-img").attr("src", `assets/jack-images/${jack_img}`)
+
+                $("#copyright").text(`Copyright ${new Date().getFullYear()}. All rights reserved.`)
+            })
+        </script>
     </head>
     <body>
         <header>
@@ -19,16 +32,29 @@
             <h2>welcome</h2>
             <div class="photodesc">
                 <div class="left">
-                    <p>My name is Jack Anderson. I'm a student with interests in technology, particularly in computer science, graphic design, and photography. </p>
-                    <p>My current projects include this website, and a blog framework to follow it. I enjoy Javascript and C#, and I'm working on learning Rust. I'm always open to learning new concepts and techniques in all fields.</p>
+                    <p>My name is Jack Anderson. I'm a high school student with interests in technology, particularly in computer science, graphic design and photography and I'm always open to learning new skills and techniques.</p>
+                    <p>Some of my projects include this website, various APIs, including a blog framework, a Discord bot, and various command line applications written in various languages.</p>
+                    <br>
+                    <p>Some of my hobbies include snowboarding, hiking and spending time outdoors and biking.</p>
+
+                    <h3>I program mainly in the following languages:</h3>
+                    <ul>
+                        <li><p><strong>Javascript / Typescript</strong></p></li>
+                        <li><p><strong>C#</strong></p></li>
+                        <li><p>Rust</p></li>
+                        <li><p>Python</p></li>
+                        <li><p>C++ / C</p></li>
+                    </ul>
                 </div>
                 <div class="photo">
-                    <img src="IMG_2247.jpg">
+                    <img id="jack-img" src="#">
                 </div>
+            </div>
+            <div>
             </div>
         </section>
         <footer>
-            <p>Copyright 2023. All rights reserved.</p>
+            <p id="copyright">Copyright 2023. All rights reserved.</p>
             <a class="contact-button" href="contact.html">contact</a>
         </footer>
     </body>

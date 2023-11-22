@@ -78,20 +78,22 @@ section {
 
 .photodesc {
     display:flex;
+    justify-content: space-between;
 }
 
 .photodesc img {
-    height: 16em;
-    width: 16em;
-    /* margin-left: 8em; */
+    height: 24em;
+    width: 24em;
 }
 
 .photodesc .left,.photo {
     display:inline-block;
-    /* min-height:100vh; */
 }
 .photodesc .photo {
     align-items:baseline;
+}
+.photo {
+    margin-left: 10em;
 }
 .photodesc .left {
     display:flex;
@@ -100,6 +102,20 @@ section {
 
 .photodesc .left .bottom {
     margin-top:auto;
+}
+
+.left ul li strong {
+    padding: 0.25em;
+    background-color:rgb(65,120,255);
+}
+.left ul {
+    padding:0;
+    margin:0;
+    display: flex;
+}
+.left ul li {
+    list-style-type: none;
+    margin-right:1em;
 }
 
 .contact-button {
