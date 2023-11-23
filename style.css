@@ -108,6 +108,7 @@ section {
     padding: 0.25em;
     background-color:rgb(65,120,255);
 }
+
 .highlights ul {
     padding:0;
     margin:0;
@@ -125,11 +126,9 @@ section {
     font-weight:600;
 }
 
-.portfolio .portfolio-item {
-    display:flex;
-    justify-content: space-between;
+portfolio-item p a {
+    color: rgb(155,200,255);
 }
-
 portfolio portfolio-item .photo {
     height:8em;
     width:8em;
