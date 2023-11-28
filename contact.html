@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>contact - Jack Anderson</title>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            const validateName  = () => {
+                const name = $("#name")
+                if(name.val() !== "") {
+                    name.removeClass("invalid")
+                    return true
+                }
+                else {
+                    name.addClass("invalid")
+                    return false
+                }
+            }
+            const validateEmail = () => {
+                const email = $("#email")
+                if(email.val().match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/)) {
+                    email.removeClass("invalid")
+                    return true
+                }
+                else {
+                    email.addClass("invalid")
+                    return false
+                }
+            }
+
+            const validateInquiryType = () => {
+                const pro_inq = $("#pro-inq")
+                const per_inq = $("#per-inq")
+                const fieldset = $("#inquiry-type")
+
+                console.log(pro_inq.is(":checked"))
+                if((!pro_inq.is(":checked") && !per_inq.is(":checked")) || (pro_inq.is(":checked") && per_inq.is(":checked"))) {
+                    fieldset.addClass("invalid")
+                    return false
+                }
+                else {
+                    fieldset.removeClass("invalid")
+                    return true
+                }
+            }
+
+            $(document).ready(() => {
+                $("#name").on("keyup", validateName)
+                $("#email").on("keyup", validateEmail)
+                
+                $("#submit").on("click",(e) => {
+                    const name = $("#name");
+                    const email = $("#email");
+                    const pro_inq = $("#pro-inq")
+                    const per_inq = $("#per-inq")
+
+                    validateEmail();
+                    validateName();
+                    validateInquiryType();
+                    const formData = {
+                        name:undefined,
+                        email:undefined,
+                        inquiry_type:undefined
+                    }
+
+                    if(!validateName()) {
+                        return alert("Name must be filled.")
+                    }
+                    if(!validateEmail()) {
+                        return alert("Email must be formatted correctly.")
+                    }
+                    if(!validateInquiryType()) {
+                        return alert("Must select one inquiry type.")
+                    }
+                    const checkedInquiryType = (() => {
+                        if(pro_inq.is(":checked")) return pro_inq.val()
+                        else return per_inq.val()
+                    })()
+
+                    formData.name = name.val();
+                    formData.email = email.val();
+                    formData.inquiry_type = checkedInquiryType;
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">jack anderson.</a>
+            <nav>
+                <ul>
+                    <li><a href="portfolio.html">portfolio</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h2>contact</h2>
+            <p>Let's get in touch.</p>
+
+            <form id="contact-form" style="margin-top: 4em;">
+                <fieldset class="flex">
+                    <label for="name">Name</label>
+                    <input id="name" class="textbox" type="text">
+                </fieldset>
+                <fieldset class="flex">
+                    <label for="email">Email</label>
+                    <input id="email" class="textbox" type="text">
+                </fieldset>
+                
+                <fieldset id="inquiry-type" >
+                    <legend>Type of Inquiry</legend>
+                    
+                    <input id="pro-inq" name="inq-type" class="textbox" type="radio" value="professional">
+                    <label for="pro-inq">Professional</label>
+
+                    <input id="per-inq" name="inq-type" class="textbox" type="radio" value="personal" checked>
+                    <label for="per-inq">Personal</label>
+                </fieldset>
+                <fieldset class="flex" style="align-items:center; display:flex; justify-content: space-between;">
+                    <a class="submit" id="submit">Submit</a>
+                </fieldset>
+                
+            </form>
+        </section>
+        <footer>
+            <p>Copyright 2023. All rights reserved.</p>
+        </footer>
+    </body>
+</html>

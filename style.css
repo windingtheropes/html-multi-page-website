@@ -93,7 +93,14 @@ section {
     align-items:baseline;
 }
 .photo {
+    transition-duration:500ms;
+    cursor:pointer;
+    opacity: 100%;
     margin-left: 10em;
+}
+.photo:hover {
+    transition-duration:500ms;
+    opacity: 80%;
 }
 .photodesc .left {
     display:flex;
@@ -144,4 +151,77 @@ portfolio portfolio-item portfolio-head img {
     height:1em;
     width:1em;
     cursor:pointer;
+}
+
+.field {
+    display:flex; height:1em; align-items:center;
+    justify-content: space-between;
+}
+
+.field * {
+    padding-right: 1em;
+}
+form {
+    padding:2em;
+    /* border: 1px solid white; */
+    width: 26em;
+    background-color: rgb(55,90,235);
+}
+form input[type=text] {
+    transition-duration: 500ms;
+    border: none;   
+    border-bottom: 0.125em solid hsl(228, 82%, 47%);
+    font-family:  'Montserrat', sans-serif;
+    outline:none;
+    background-color: rgb(55,90,235);
+    color:white;
+    padding: 0.25em;
+    font-size: 12pt;
+}
+
+form input[type=text]:focus {
+    transition-duration: 500ms;
+    border-color: white;
+}
+form input[type=submit] {
+    outline:none;
+    border: none;
+    cursor:pointer;
+    background-color:white;
+    color: rgb(55,90,235);
+    padding:0.5em;
+    font-weight:600;
+}
+form input[type=text].invalid {
+    border-color:rgb(255, 88, 88);
+}
+
+form label.invalid {
+    color:rgb(255, 88, 88);
+}
+
+#inquiry-type {
+    transition-duration: 500ms;
+    border:1.75px solid white;
+}
+#inquiry-type.invalid {
+    transition-duration: 500ms;
+    border:1.75px solid  rgb(255, 88, 88);
+}
+
+form .submit {
+    margin-top: 2em;
+    background-color:white; 
+    padding:0.5em;
+    font-weight:500;
+    color:rgb(65,100,255); 
+    cursor:pointer; 
+    text-align: center;
+}
+
+form fieldset.flex {
+    border:none; 
+    display:flex; 
+    justify-content:space-between; 
+    align-items:center;
 }

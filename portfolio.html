@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
-        <title>Jack Anderson</title>
+        <title>portfolio - Jack Anderson</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script>
-            $(document).on("click", ".gh-link", (e) => {
-                window.location.assign(e.target.attributes.getNamedItem("href").value)
-            })
-        </script>
     </head>
     <body>
         <header>
             <a href="index.html">jack anderson.</a>
             <nav>
                 <ul>
-                    <li><a href="blog.html">blog</a></li>
                     <li><a href="portfolio.html">portfolio</a></li>
                 </ul>
             </nav>
@@ -26,12 +20,13 @@
                 <portfolio-item>
                     <portfolio-head>
                         <h3>blogger</h3>
-                        <img class="gh-link" src="assets/github-mark-white.png" href="https://github.com/windingtheropes/blogger">
+                        <a href="https://github.com/windingtheropes/blogger"><img class="gh-link" src="assets/github-mark-white.png"></a>
                     </portfolio-head>
                 <p>Blogger is my latest project, a customizable blog engine originally written in Javascript, and later rewritten in Typescript. Through this project, I've learned to write type safe object oriented code, through a custom-made database, utilizing file I/O and caching to serve blog data efficiently.</p>
                 <div class="highlights">
                     <ul>
-                        <li><p><strong>Object Oriented Javascript / Typescript</strong></p></li>
+                        <li><p><strong>Object Oriented Programming</strong></p></li>
+                        <li><p><strong>Javascript / Typescript</strong></p></li>
                     </ul>
                 </div>
                 </portfolio-item>
@@ -39,7 +34,7 @@
                 <portfolio-item>
                     <portfolio-head>
                         <h3>purge</h3>
-                        <img class="gh-link" src="assets/github-mark-white.png" href="https://github.com/windingtheropes/purge-rust">
+                        <a href="https://github.com/windingtheropes/purge-rust"><img class="gh-link" src="assets/github-mark-white.png"></a>
                     </portfolio-head>
                     <p>Purge is a simple command line application that can mass-delete files by matching patterns, following customizable parameters. It was originally written in Javascript running through Node.js, although this solution was very bulky and slow, contradicting the quick and convenient nature of the application. I decided to rewrite it in Rust as one of my first projects in Rust, and I quickly realized the benefits of Rust, and was forced to write safer code. Linked above is the purge-rust rewrite, the old version written in javascript can be found <a href="https://github.com/windingtheropes/purge">here</a>.</p>
                 <div class="highlights">
@@ -53,7 +48,7 @@
                 <portfolio-item>
                     <portfolio-head>
                         <h3>keeb</h3>
-                        <img class="gh-link" src="assets/github-mark-white.png" href="https://github.com/windingtheropes/keeb">
+                        <a href="https://github.com/windingtheropes/keeb"><img class="gh-link" src="assets/github-mark-white.png"></a>
                     </portfolio-head>
                 <p>Keeb is one of my more advanced projects, my foray into working with HID through Rust, and using the C programming language. Keeb works by contacting a mechanical keyboard running QMK, allowing for control of keymappings and raw input without flashing firmware every time. Keeb has been a great learning experience, requiring various rewrites, and lots of thinking. Although the project has become stale, it has served useful for learning more advanced Rust features, and working with HID devices.</p>
                 <div class="highlights">
